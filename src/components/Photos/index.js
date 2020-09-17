@@ -19,10 +19,9 @@ const useStyles = makeStyles({
 
 function Photos(props) {
   const classes = useStyles();
-  const { photos } = props;
-
-  const LooadingPhoto = (e) => {
-    console.log("click");
+  const { photos, nextPage } = props;
+  const LoadNewPage = (e) => {
+    nextPage();
   };
 
   if (photos.length) {
@@ -39,7 +38,7 @@ function Photos(props) {
           container
           className={classes.btn}
         >
-          <Button variant="outlined" onClick={LooadingPhoto}>
+          <Button variant="outlined" onClick={LoadNewPage}>
             Load more…
           </Button>
         </Grid>
@@ -54,6 +53,4 @@ const mapStateToProps = (state) => ({
   photos: state.photos,
 });
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Photos);
+export default connect(mapStateToProps)(Photos);

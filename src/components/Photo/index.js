@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -13,7 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Photo(props) {
+export default function Photo(props) {
   const classes = useStyles();
   const { photo } = props;
 
@@ -23,11 +22,3 @@ function Photo(props) {
     </div>
   );
 }
-
-const mapStateToProps = (state) => ({
-  photos: state.photos,
-});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Photo);
