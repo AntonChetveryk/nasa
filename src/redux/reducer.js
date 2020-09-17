@@ -2,6 +2,7 @@ import { GET_PLANETS } from "./actions";
 
 const initialState = {
   photos: [],
+  page: 1,
 };
 
 const reducer = (state = initialState, action) => {

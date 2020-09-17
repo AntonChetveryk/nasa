@@ -30,7 +30,7 @@ function Photos(props) {
       <>
         <ol className={classes.list}>
           {photos.map((photo) => (
-            <Photo key={photo.id} />
+            <Photo key={photo.id} photo={photo} />
           ))}
         </ol>
         <Grid
